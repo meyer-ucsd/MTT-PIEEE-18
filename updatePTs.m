@@ -1,6 +1,6 @@
 % Florian Meyer, 2017, 2020
 
-function [legacyPTs,legacyExistences,legacyLabels] = updatePTs(kappas,newMessages,legacyPTs,newPTs,legacyExistences,newExistences,legacyLabels,newLabels,vFactors1)
+function [legacyPTs,legacyExistences,legacyLabels] = updatePTs(kappas,iotas,legacyPTs,newPTs,legacyExistences,newExistences,legacyLabels,newLabels,vFactors1)
 
 numTargets = size(vFactors1,2);
 numMeasurements = size(vFactors1,1)-1;
@@ -26,7 +26,7 @@ end
 % merge new and legacy PTs
 legacyPTs = cat(3,legacyPTs,newPTs);
 
-newExistences = newMessages.*newExistences./(newMessages.*newExistences + 1);
+newExistences = iotas.*newExistences./(iotas.*newExistences + 1);
 if(isempty(legacyExistences))
     legacyExistences = newExistences;
 else

@@ -21,9 +21,7 @@ for step = 1:numSteps-1
     scatter(trueTracks(1,1,currentStep),trueTracks(2,1,currentStep),50,[0,0,0],'x','LineWidth', 1.5)
     hold on
     
-    step
     for sensor = 1:numSensors
-        sensor
         scatter(sensorPositions(1,sensor),sensorPositions(2,sensor),50,[0,0,1],'o','LineWidth', 1.5)
 
         currentMeasurements = measurements{currentStep,sensor};
