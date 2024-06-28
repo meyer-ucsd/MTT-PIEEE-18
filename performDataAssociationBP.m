@@ -7,7 +7,7 @@ numMeasurements = numMeasurements-1;
 outputLegacy = ones(numMeasurements,numObjects);
 outputNew = ones(numMeasurements,1);
 
-if(numObjects <= 1 || numMeasurements == 0)
+if(numObjects == 0 || numMeasurements == 0)
     return;
 end
 
